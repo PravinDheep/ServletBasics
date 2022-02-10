@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ajax Register</title>
+<script src="./js/jquery-1.12.4.min.js"></script>
+<style>
+	.addresstextarea {
+		margin-left: 235px;
+		position:relative;
+		width:240px;
+		border: 1px solid black;
+		border-radius: 5px;
+	}
+	
+	input {
+		margin-top: 10px;
+	}
+	
+	/* input:[type="submit"] {
+		margin-top: 25px;
+	} */
+	
+	#submit {
+		border: 2px solid blue;
+		margin-left: 176px;
+	}
+	
+</style>
+</head>
+<body>
+	<form id="register" >
+		<pre>
+			<label>Name:</label>    <input type="text" name="name"/>
+			<label>Email:</label>   <input type="text" name="email" />
+			<label>Address:</label> <br/><textarea class="addresstextarea" rows="5" cols="15" name="address"></textarea>
+			<input type="button" id="submit" value="ValidateAndRegister" />
+			<p id="result"></p>
+		</pre>
+	</form>
+	
+<script type="text/javascript">
+	$("#submit").click(function(e){
+	//$("#submit").on("submit", function(e) {
+		$("#result").text("");
+		var formContent = $( "form" ).serialize();
+		$.ajax({
+			url:"./ajaxRegister",	
+			cache: false,
+			type: 'get',
+			data: formContent,
+			datatype: 'text',
+			success: function(res){
+				$("#result").append(res);
+				//setInterval('location.reload()', 7000);
+			},
+			error: function(e){
+				$("#result").append("FAILURE" + e);
+			}
+		});
+	});
+</script>
+
+
+
+</body>
+</html>

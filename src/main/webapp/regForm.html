@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration Form</title>
+</head>
+<body bgcolor="Lightskyblue">
+	<form id="regForm" name="regForm" method="post" action="./registration">
+		<table>
+		<tr><td><label>Name: </label><input type="text" id="name" name="name" /></td></tr>
+		<tr><td><label>E-mail: </label><input type="text" id="email" name="email" /></td></tr>
+		<tr><td><label>Address: </label><textarea rows="5" cols="14" name="address"></textarea></td></tr>
+		<tr><td><label>Gender:</label>
+			<input type="radio" id="genderMale" value="Male"><label>Male</label>
+			<input type="radio" id="genderFemale" value="Female"><label>Female</label>
+		</td></tr>
+		<tr><td><label>Languages Known:</label>
+		<input type="checkbox" id="knownLanguageTamil" value="Tamil" /><label>Tamil</label>
+		<input type="checkbox" id="knownLanguageEnglish" value="English" /><label>English</label>
+		<input type="checkbox" id="knownLanguageOthers" value="Others" /><label>Others</label>
+		</td></tr>
+		<tr><td><label>Country: </label><select id="country" name="country">
+			<option value="india" selected>India</option>
+			<option value="usa">USA</option>
+			<option value="uk">UK</option>
+		</select>
+		</td></tr>
+		<br/>
+		<tr><td><input type="submit" value="Registration" /></td></tr>
+		</table>
+	</form>		
+ </body>
+</html>
